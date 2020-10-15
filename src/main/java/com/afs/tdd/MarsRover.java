@@ -26,6 +26,15 @@ public class MarsRover {
         if(command==MOVE){
             move();
         }
+        if(command=="L"){
+            turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        if(headingDirection==NORTH_DIRECTION){
+            headingDirection = "W";
+        }
     }
 
     private void move() {
