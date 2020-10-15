@@ -164,4 +164,16 @@ class MarsRoverTest {
         assertThrows(CommandNotDefinedException.class,executable);
     }
 
+    @Test
+    void should_return_negative_1_1_N_when_execute_given_0_0_N_command_M_L_M_R() throws CommandNotDefinedException {
+        //Given
+        MarsRover marsRover = new MarsRover(0,0,"N");
+        //When
+        marsRover.executeCommands("MLMR");
+        //Then
+        assertEquals(-1, marsRover.getCoordinateX());
+        assertEquals(1, marsRover.getCoordinateY());
+        assertEquals("N",marsRover.getHeadingDirection());
+    }
+
 }
