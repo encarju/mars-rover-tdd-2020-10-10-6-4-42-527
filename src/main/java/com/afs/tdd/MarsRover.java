@@ -59,6 +59,9 @@ public class MarsRover {
         if(isNorthernDirection()){
             coordinateY += MOVE_ONE_COORDINATE;
         }
+        if(headingDirection=="S"){
+            coordinateY -= MOVE_ONE_COORDINATE;
+        }
     }
 
     public int getCoordinateX() {
