@@ -81,7 +81,7 @@ class MarsRoverTest {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //When
-        marsRover.executeCommands("R");
+        marsRover.executeCommands("M");
         //Then
         assertEquals(1, marsRover.getCoordinateX());
         assertEquals(0, marsRover.getCoordinateY());
