@@ -48,6 +48,9 @@ public class MarsRover {
         if(isNorthernDirection()){
             headingDirection = EAST_DIRECTION;
         }
+        if(headingDirection==SOUTH_DIRECTION){
+            headingDirection = WEST_DIRECTION;
+        }
     }
 
     private void turnLeft() {
