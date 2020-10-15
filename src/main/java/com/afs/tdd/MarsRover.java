@@ -74,6 +74,9 @@ public class MarsRover {
         if(isEasternDirection()){
             coordinateX += MOVE_ONE_COORDINATE;
         }
+        if(headingDirection==WEST_DIRECTION){
+            coordinateX -= MOVE_ONE_COORDINATE;
+        }
     }
 
     private boolean isNorthernDirection(){
