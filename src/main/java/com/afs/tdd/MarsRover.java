@@ -6,6 +6,8 @@ public class MarsRover {
     private static final String MOVE = "M";
     private static final String NORTH_DIRECTION = "N";
     private static final String DELIMITER = "";
+    private static final String WEST_DIRECTION = "W";
+    private static final int MOVE_ONE_COORDINATE = 1;
     private  int coordinateX;
     private  int coordinateY;
     private  String headingDirection;
@@ -33,13 +35,13 @@ public class MarsRover {
 
     private void turnLeft() {
         if(headingDirection==NORTH_DIRECTION){
-            headingDirection = "W";
+            headingDirection = WEST_DIRECTION;
         }
     }
 
     private void move() {
         if(headingDirection==NORTH_DIRECTION){
-            coordinateY += 1;
+            coordinateY += MOVE_ONE_COORDINATE;
         }
     }
 
