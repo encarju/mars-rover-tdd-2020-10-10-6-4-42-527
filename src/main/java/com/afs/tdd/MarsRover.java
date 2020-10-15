@@ -1,6 +1,5 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
 
 public class MarsRover {
     private static final String MOVE = "M";
@@ -12,6 +11,7 @@ public class MarsRover {
     private static final String TURN_RIGHT = "R";
     private static final String EAST_DIRECTION = "E";
     private static final String SOUTH_DIRECTION = "S";
+    private static final String COMMAND_NOT_DEFINED_MSG = "Command Not Defined";
     private int coordinateX;
     private int coordinateY;
     private String headingDirection;
@@ -24,7 +24,7 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) throws CommandNotDefinedException {
-        for (String command : Arrays.asList(commands.split(DELIMITER))) {
+        for (String command : commands.split(DELIMITER)) {
             this.executeCommand(command);
         }
     }
@@ -37,7 +37,7 @@ public class MarsRover {
         } else if (command.equals(TURN_RIGHT)) {
             turnRight();
         } else {
-            throw new CommandNotDefinedException("Command Not Defined");
+            throw new CommandNotDefinedException(COMMAND_NOT_DEFINED_MSG);
         }
     }
 
@@ -78,19 +78,19 @@ public class MarsRover {
     }
 
     private boolean isNorthernDirection() {
-        return headingDirection == NORTH_DIRECTION;
+        return headingDirection.equals(NORTH_DIRECTION);
     }
 
     private boolean isSouthernDirection() {
-        return headingDirection == SOUTH_DIRECTION;
+        return headingDirection.equals(SOUTH_DIRECTION);
     }
 
     private boolean isEasternDirection() {
-        return headingDirection == EAST_DIRECTION;
+        return headingDirection.equals(EAST_DIRECTION);
     }
 
     private boolean isWesternDirection() {
-        return headingDirection == WEST_DIRECTION;
+        return headingDirection.equals(WEST_DIRECTION);
     }
 
     private void setHeadingDirection(String headingDirection){

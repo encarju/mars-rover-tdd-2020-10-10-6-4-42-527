@@ -157,9 +157,7 @@ class MarsRoverTest {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //When
-        Executable executable = () -> {
-            marsRover.executeCommands("MLMRF");
-        };
+        Executable executable = () -> marsRover.executeCommands("MLMRF");
         //Then
         assertThrows(CommandNotDefinedException.class,executable);
     }
