@@ -3,6 +3,9 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
+    private static final String MOVE = "M";
+    private static final String NORTH_DIRECTION = "N";
+    private static final String DELIMITER = "";
     private  int coordinateX;
     private  int coordinateY;
     private  String headingDirection;
@@ -16,17 +19,17 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
-        Arrays.asList(commands.split("")).forEach(command -> this.executeCommand(command));
+        Arrays.asList(commands.split(DELIMITER)).forEach(command -> this.executeCommand(command));
     }
 
     private void executeCommand(String command) {
-        if(command=="M"){
+        if(command==MOVE){
             move();
         }
     }
 
     private void move() {
-        if(headingDirection=="N"){
+        if(headingDirection==NORTH_DIRECTION){
             coordinateY += 1;
         }
     }
