@@ -31,13 +31,13 @@ public class MarsRover {
     }
 
     private void executeCommand(String command) throws CommandNotDefinedException{
-        if(command==MOVE){
+        if(command.equals(MOVE)){
             move();
         }
-        else if(command==TURN_LEFT){
+        else if(command.equals(TURN_LEFT)){
             turnLeft();
         }
-        else if(command==TURN_RIGHT){
+        else if(command.equals(TURN_RIGHT)){
             turnRight();
         }
         else{
@@ -49,13 +49,13 @@ public class MarsRover {
         if(isNorthernDirection()){
             headingDirection = EAST_DIRECTION;
         }
-        if(isSouthernDirection()){
+        else if(isSouthernDirection()){
             headingDirection = WEST_DIRECTION;
         }
-        if(isEasternDirection()){
+        else if(isEasternDirection()){
             headingDirection = SOUTH_DIRECTION;
         }
-        if(isWesternDirection()){
+        else if(isWesternDirection()){
             headingDirection = NORTH_DIRECTION;
         }
     }
@@ -64,13 +64,13 @@ public class MarsRover {
         if(isNorthernDirection()){
             headingDirection = WEST_DIRECTION;
         }
-        if(isSouthernDirection()){
+        else if(isSouthernDirection()){
             headingDirection = EAST_DIRECTION;
         }
-        if(isEasternDirection()){
+        else if(isEasternDirection()){
             headingDirection = NORTH_DIRECTION;
         }
-        if(isWesternDirection()){
+        else if(isWesternDirection()){
             headingDirection = SOUTH_DIRECTION;
         }
     }
@@ -79,13 +79,13 @@ public class MarsRover {
         if(isNorthernDirection()){
             coordinateY += MOVE_ONE_COORDINATE;
         }
-        if(isSouthernDirection()){
+        else if(isSouthernDirection()){
             coordinateY -= MOVE_ONE_COORDINATE;
         }
-        if(isEasternDirection()){
+        else if(isEasternDirection()){
             coordinateX += MOVE_ONE_COORDINATE;
         }
-        if(isWesternDirection()){
+        else if(isWesternDirection()){
             coordinateX -= MOVE_ONE_COORDINATE;
         }
     }
