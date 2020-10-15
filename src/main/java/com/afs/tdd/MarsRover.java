@@ -48,7 +48,7 @@ public class MarsRover {
             headingDirection = WEST_DIRECTION;
         }
         if(isEasternDirection()){
-            headingDirection = NORTH_DIRECTION;
+            headingDirection = SOUTH_DIRECTION;
         }
     }
 
