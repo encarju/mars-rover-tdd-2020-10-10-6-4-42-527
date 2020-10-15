@@ -50,7 +50,7 @@ public class MarsRover {
         if(isEasternDirection()){
             headingDirection = SOUTH_DIRECTION;
         }
-        if(headingDirection==WEST_DIRECTION){
+        if(isWesternDirection()){
             headingDirection = NORTH_DIRECTION;
         }
     }
@@ -65,7 +65,7 @@ public class MarsRover {
         if(isEasternDirection()){
             headingDirection = NORTH_DIRECTION;
         }
-        if(headingDirection==WEST_DIRECTION){
+        if(isWesternDirection()){
             headingDirection = SOUTH_DIRECTION;
         }
     }
@@ -80,7 +80,7 @@ public class MarsRover {
         if(isEasternDirection()){
             coordinateX += MOVE_ONE_COORDINATE;
         }
-        if(headingDirection==WEST_DIRECTION){
+        if(isWesternDirection()){
             coordinateX -= MOVE_ONE_COORDINATE;
         }
     }
@@ -95,6 +95,10 @@ public class MarsRover {
 
     private boolean isEasternDirection() {
         return headingDirection==EAST_DIRECTION;
+    }
+
+    private boolean isWesternDirection() {
+        return headingDirection==WEST_DIRECTION;
     }
 
     public int getCoordinateX() {
