@@ -11,6 +11,7 @@ public class MarsRover {
     private static final String TURN_LEFT = "L" ;
     private static final String TURN_RIGHT = "R";
     private static final String EAST_DIRECTION = "E";
+    private static final String SOUTH_DIRECTION = "S";
     private  int coordinateX;
     private  int coordinateY;
     private  String headingDirection;
@@ -59,7 +60,7 @@ public class MarsRover {
         if(isNorthernDirection()){
             coordinateY += MOVE_ONE_COORDINATE;
         }
-        if(headingDirection=="S"){
+        if(headingDirection==SOUTH_DIRECTION){
             coordinateY -= MOVE_ONE_COORDINATE;
         }
     }
