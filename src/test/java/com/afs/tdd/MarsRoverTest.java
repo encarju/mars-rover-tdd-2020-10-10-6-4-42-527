@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MarsRoverTest {
 
     @Test
-    void should_return_0_1_N_when_execute_given_0_0_N_command_M() {
+    void should_return_0_1_N_when_execute_given_0_0_N_command_M() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //When
@@ -21,7 +21,7 @@ class MarsRoverTest {
         assertEquals("N",marsRover.getHeadingDirection());
     }
     @Test
-    void should_return_0_0_W_when_execute_given_0_0_N_command_L() {
+    void should_return_0_0_W_when_execute_given_0_0_N_command_L() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //When
@@ -33,7 +33,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_E_when_execute_given_0_0_N_command_R() {
+    void should_return_0_0_E_when_execute_given_0_0_N_command_R() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //When
@@ -45,7 +45,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_negative_1_S_when_execute_given_0_0_S_command_M() {
+    void should_return_0_negative_1_S_when_execute_given_0_0_S_command_M() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //When
@@ -57,7 +57,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_E_when_execute_given_0_0_S_command_L() {
+    void should_return_0_0_E_when_execute_given_0_0_S_command_L() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //When
@@ -69,7 +69,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_W_when_execute_given_0_0_S_command_R() {
+    void should_return_0_0_W_when_execute_given_0_0_S_command_R() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"S");
         //When
@@ -81,7 +81,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_1_0_E_when_execute_given_0_0_E_command_M() {
+    void should_return_1_0_E_when_execute_given_0_0_E_command_M() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //When
@@ -93,7 +93,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_N_when_execute_given_0_0_E_command_L() {
+    void should_return_0_0_N_when_execute_given_0_0_E_command_L() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //When
@@ -105,7 +105,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_S_when_execute_given_0_0_E_command_R() {
+    void should_return_0_0_S_when_execute_given_0_0_E_command_R() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //When
@@ -117,7 +117,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_negative_1_0_W_when_execute_given_0_0_W_command_M() {
+    void should_return_negative_1_0_W_when_execute_given_0_0_W_command_M() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //When
@@ -129,7 +129,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_S_when_execute_given_0_0_W_command_L() {
+    void should_return_0_0_S_when_execute_given_0_0_W_command_L() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //When
@@ -141,7 +141,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_return_0_0_N_when_execute_given_0_0_W_command_R() {
+    void should_return_0_0_N_when_execute_given_0_0_W_command_R() throws CommandNotDefinedException {
         //Given
         MarsRover marsRover = new MarsRover(0,0,"W");
         //When
@@ -158,7 +158,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0,0,"W");
         //When
         Executable executable = () -> {
-            marsRover.executeCommands("MLMR");
+            marsRover.executeCommands("MLMRF");
         };
         //Then
         assertThrows(CommandNotDefinedException.class,executable);

@@ -24,19 +24,24 @@ public class MarsRover {
         this.headingDirection = headingDirection;
     }
 
-    public void executeCommands(String commands) {
-        Arrays.asList(commands.split(DELIMITER)).forEach(command -> this.executeCommand(command));
+    public void executeCommands(String commands) throws CommandNotDefinedException {
+        for (String command : Arrays.asList(commands.split(DELIMITER))) {
+            this.executeCommand(command);
+        }
     }
 
-    private void executeCommand(String command) {
+    private void executeCommand(String command) throws CommandNotDefinedException{
         if(command==MOVE){
             move();
         }
-        if(command==TURN_LEFT){
+        else if(command==TURN_LEFT){
             turnLeft();
         }
-        if(command==TURN_RIGHT){
+        else if(command==TURN_RIGHT){
             turnRight();
+        }
+        else{
+            throw new CommandNotDefinedException("Command Not Defined");
         }
     }
 
